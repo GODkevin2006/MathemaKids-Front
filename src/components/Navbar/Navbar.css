@@ -1,0 +1,22 @@
+.navbar {
+  width: 100%;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.btn-login {
+  background: #1957ff;
+  color: white;
+  padding: 8px 18px;
+  border: none;
+  border-radius: 10px;
+}
