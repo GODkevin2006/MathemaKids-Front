@@ -1,5 +1,6 @@
 import { Navbar, Nav, NavDropdown, Container, Button } from "react-bootstrap";
 import logo from "../../assets/images/logo/MathemaKids-Logo-V1.png";
+import { Link } from "react-router-dom";
 import "./Navbar.css";
 
 export default function MyNavbar() {
@@ -20,6 +21,11 @@ export default function MyNavbar() {
 
             <Nav.Link href="/">Inicio</Nav.Link>
             <Nav.Link href="#">Proyectos</Nav.Link>
+            
+
+          
+
+            
 
             <NavDropdown title="Conoce más" id="conoce-dropdown">
               <NavDropdown.Item href="#">Historia</NavDropdown.Item>
@@ -32,7 +38,7 @@ export default function MyNavbar() {
               <NavDropdown.Item href="#">Documental</NavDropdown.Item>
             </NavDropdown>
 
-            <Nav.Link href="#">Contacto</Nav.Link>
+            <Nav.Link as={Link} to="/contacto">Contacto</Nav.Link>
 
           </Nav>
 

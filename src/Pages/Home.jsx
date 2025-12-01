@@ -9,6 +9,9 @@ import BlogCard from "../components/Blog_card/Blog_card.jsx";
 import Img1 from '../assets/images/Mathemakids/imgEjemplo.png';
 
 
+
+
+
 const Home = () => {
   return (
     <main className="mathema-kids-home-content">
@@ -169,6 +172,9 @@ const Home = () => {
       </div>
       
     </section>
+
+    {/* 5. SECCIÓN DE CONTACTO */}
+    
 
 
     </main>

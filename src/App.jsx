@@ -1,19 +1,16 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { AuthProvider } from './context/AuthContext';
 
-import Login from './components/auth/Login';
-<<<<<<< HEAD
-import PerfilUsuario from './pages/PerfilUsuario';
 
-=======
+import Login from './components/auth/Login';
 import Footer from "./components/Footer/Footer.jsx";
 import Navbar from "./components/Navbar/Navbar.jsx";
 import Home from "./Pages/Home.jsx";
+import Contacto from "./pages/Contacto.jsx";
 
 import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
->>>>>>> 4d13308011285474de22231489b8cc97080307f1
 
 function App() {
 
@@ -25,12 +22,6 @@ function App() {
   }, []);
 
   return (
-<<<<<<< HEAD
-    <>
-    <PerfilUsuario/>
-    </>
-      );
-=======
     <BrowserRouter>
       <AuthProvider>
 
@@ -39,6 +30,9 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/contacto" element={<Contacto />} />
+        
+
         </Routes>
 
         <Footer />
@@ -46,7 +40,6 @@ function App() {
       </AuthProvider>
     </BrowserRouter>
   );
->>>>>>> 4d13308011285474de22231489b8cc97080307f1
 }
 
 export default App;
