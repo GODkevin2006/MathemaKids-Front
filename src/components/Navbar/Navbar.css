@@ -1,22 +1,82 @@
-.navbar {
-  width: 100%;
-  padding: 20px 40px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: white;
+
+/* Quitar borde del dropdown */
+.navbar .dropdown-toggle::after {
+  margin-left: 5px;
 }
 
-.nav-links {
-  list-style: none;
-  display: flex;
-  gap: 20px;
+/* Separador vertical */
+.vertical-line {
+  width: 1px;
+  height: 30px;
+  background-color: #ccc;
 }
 
-.btn-login {
-  background: #1957ff;
-  color: white;
-  padding: 8px 18px;
+/* Color base de links */
+.nav-link {
+  color: #085A9E !important;
+}
+
+/* Hover estilo sutil */
+.nav-link:hover,
+.dropdown-toggle:hover {
+  font-weight: bold;
+}
+
+/* Margen entre elementos del nav */
+.nav-items .nav-link,
+.nav-items .dropdown-toggle {
+  margin: 0 8px;
+}
+
+
+
+.navbar .nav-link:hover,
+.navbar .dropdown-toggle:hover {
+  color:  #B20FB2 !important;
+  transition: all 0.25s ease;
+}
+
+.btn-login-custom {
+  background: linear-gradient(90deg, #B20FB2, #085A9E);
+  color: white !important;
   border: none;
-  border-radius: 10px;
+  padding: 10px 20px;
+  border-radius: 12px;
+  transition: all 0.3s ease;
 }
+
+.btn-login-custom:hover {
+  background: linear-gradient(90deg, #085A9E, #B20FB2);
+  transform: scale(1.05);
+}
+
+.btn-register-custom {
+  background-color: white !important;
+  border: 2px solid #085A9E ;
+  color: #085A9E !important;
+  border-radius: 12px;
+  padding: 10px 20px;
+  transition: all 0.3s ease;
+}
+
+.btn-register-custom:hover {
+  background: #085A9E !important;
+  color: white !important;
+  transform: scale(1.05);
+}
+
+.navbar-collapse {
+  overflow: visible !important;
+}
+
+@media (max-width: 992px) {
+  #dropdown-user + .dropdown-menu {
+    position: static !important;
+    transform: none !important;
+    margin-top: 8px;
+  }
+}
+
+
+
+

@@ -1,0 +1,525 @@
+/* Variables de Color (ajustadas a la imagen) */
+:root {
+  --mathema-blue: #085A9E;
+  --mathema-pink: #d81b60; /* Acento Rosa/Fucsia */
+  --mathema-orange: #ff9800;
+  --mathema-red: #f44336;
+  --mathema-purple: #9c27b0;
+  --text-dark: #333;
+  --text-light: #ffffff;
+  --bg-math: #fff6e6; /* Fondo tenue de Misión/Visión */
+}
+
+/* ---------------------------------------------------- */
+/* ESTILOS GLOBALES / CONTENEDOR */
+/* ---------------------------------------------------- */
+.mathema-kids-home-content {
+  font-family: Arial, sans-serif; /* Ajusta a la fuente de tu proyecto */
+  max-width: 1500px;
+  margin: 0 auto;
+}
+
+h1, h2, h3, h4 {
+  color: var(--text-dark);
+}
+
+p {
+  color: var(--text-dark);
+}
+
+/* ---------------------------------------------------- */
+/* 1. SECCIÓN HERO / BIENVENIDA */
+/* ---------------------------------------------------- */
+.hero-section-home {
+  position: relative;
+  min-height: 80vh;
+  background-image: url("/src/images/Mathemakids/Grupo-Mathemakids.jpg"); /* Reemplaza con la ruta de la imagen */
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: flex-end; /* Alinea el texto a la derecha */
+  align-items: flex-start;
+  padding-top: 50px;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  /* El degradado de color desde el centro/izquierda al morado de la derecha */
+  background: linear-gradient(
+    to right, 
+    rgba(8, 90, 158, 0.9) 0%,     /* Azul muy opaco al inicio para asegurar contraste con el texto */
+    rgba(8, 90, 158, 0.2) 40%,    /* Azul un poco menos opaco para la transición */
+    rgba(8, 90, 158, 0.1) 70%,    /* Azul más transparente, dejando ver la imagen */
+    rgba(8, 90, 158, 0.0) 90%,    /* Casi transparente al final */
+    transparent 100%             /* Completamente transparente en el borde final */
+  );
+}
+
+.hero-text-box {
+  position: relative;
+  z-index: 10;
+  max-width: 400px;
+  padding: 30px;
+  text-align: left;
+  margin: 300px 20px 0 0;
+
+  animation-name: slideInRight;
+  animation-duration: 1.5s;        /* Duración de la animación (1.5 segundos) */
+  animation-timing-function: ease-out; /* Velocidad suave */
+  animation-fill-mode: forwards;   /* Mantiene el estado final de la animación */
+
+}
+
+.hero-title {
+  font-size: 2.5em;
+  font-weight: bold;
+  color: var(--text-light);
+  margin-bottom: 10px;
+  line-height: 1.1;
+}
+
+.hero-title br {
+  display: none; /* Oculta el salto de línea para mejor control responsive */
+}
+
+.hero-title + .hero-title::after {
+  content: 'Mathema Kids';
+  color: #fff;
+}
+
+.hero-subtitle {
+  font-size: 1.2em;
+  color: var(--text-light);
+  margin-bottom: 20px;
+}
+
+
+/* ---------------------------------------------------- */
+/* 2. SECCIÓN DE CONTENIDO CENTRAL */
+/* ---------------------------------------------------- */
+.content-section-a {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  padding: 60px 40px;
+  background-color: #ffffff;
+
+}
+
+.content-image-wrapper {
+  flex: 1;
+  min-width: 40%;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+  height: 350px;
+  border: 5px solid var(--mathema-purple); 
+  background-color: #eee;
+}
+
+.content-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* o cambia a "contain" */
+  object-position: center;
+  display: block;
+}
+
+
+.content-text-block {
+  flex: 1;
+  min-width: 50%;
+}
+
+.content-text-block h2 {
+  color: var(--mathema-purple);
+  font-size: 2em;
+  margin-bottom: 15px;
+}
+
+/* ---------------------------------------------------- */
+/* 3. SECCIÓN DE PROYECTOS DESTACADOS */
+/* ---------------------------------------------------- */
+.projects-section-b {
+  display: flex;
+  gap: 20px;
+  align-items: stretch;
+  padding: 40px;
+  background-color: #f5f3f3;
+}
+
+.project-text-block {
+  flex: 1;
+  max-width: 33%;
+  padding-right: 20px;
+}
+
+.highlight-button {
+  background-color: var(--mathema-orange);
+  color: var(--text-light);
+  border: none;
+  padding: 10px 20px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 15px;
+}
+
+.highlight-button:hover {
+  background-color: #eb8d00;
+}
+
+.project-card {
+  flex: 1;
+  max-width: 33%;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+}
+
+.project-text-block, h2 {
+  color: var(--mathema-blue);
+}
+
+.blue-card {
+  border: 1px solid var(--mathema-blue);
+  color: var(--text-light);
+}
+
+
+.blue-card h3 {
+  margin-bottom: 10px;
+  color: black; /* Se estira para igualar altura */
+}
+
+.blue-card p {
+  flex-grow: 1;
+  color: black;/* El botón siempre al final */
+}
+
+.card-placeholder {
+  height: 180px;
+  background-color: var(--mathema-blue);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  margin-bottom: 15px;
+  border-radius: 5px;
+  overflow: hidden; /* para que no se salga la imagen */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-placeholder img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* hace que la imagen encaje sin deformarse */
+  border-radius: 5px;
+}
+
+.secondary-button-project {
+  background-color: var(--mathema-blue); /* Botón de color diferente */
+  color: var(--text-light);
+  border: none;
+  padding: 8px 15px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: auto;
+  width: fit-content;
+  align-self: center;
+}
+
+.secondary-button-project:hover {
+  background-color: #064a75; /* Color más oscuro al pasar el mouse */
+}
+
+
+/* ---------------------------------------------------- */
+/* 4. SECCIÓN DE MISIÓN, VISIÓN Y VALORES */
+/* ---------------------------------------------------- */
+.mission-vision-values-section {
+  background-color: var(--bg-math);
+  padding: 80px 40px;
+  position: relative;
+  overflow: hidden;
+  /* Simulación del fondo de cuadrícula y números */
+  background-image: url('dath d="M 0 0 L 100 100 M 0 100 L 100 0" stroke="%23ffe9c7" stroke-width="1"/></svg>');
+}
+
+.cards-container {
+  display: flex;
+  justify-content: space-around;
+  gap: 30px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.mvv-card {
+  flex: 1;
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 40px 20px 0;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.mvv-icon-circle {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: -60px auto 20px; /* Posiciona el círculo fuera del borde superior */
+  border: 5px solid #ffffff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.mvv-icon {
+  font-size: 2.5em;
+}
+
+.orange-circle { background-color: var(--mathema-orange); }
+.red-circle { background-color: var(--mathema-red); }
+.purple-circle { background-color: var(--mathema-purple); }
+
+.mvv-card h4 {
+  font-size: 1.5em;
+  color: var(--text-dark);
+  margin-bottom: 15px;
+}
+
+.mvv-card p {
+  font-size: 0.9em;
+  margin-bottom: 30px;
+}
+
+.mvv-bottom-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 8px;
+  border-radius: 0 0 10px 10px;
+}
+
+.orange-bar { background-color: var(--mathema-orange); }
+.red-bar { background-color: var(--mathema-red); }
+.purple-bar { background-color: var(--mathema-purple); }
+
+
+
+/* ---------------------------------------------------- */
+/* 4. Sección de Noticias */
+/* ---------------------------------------------------- */
+
+.noticias-section {
+  padding: 50px 40px;
+  background: #fae5fd;
+  box-shadow: inset 0 30px 50px rgba(0,0,0,0.05);
+    
+}
+
+.noticias-section h2 {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 25px;
+  color: #222;
+}
+
+/* GRID RESPONSIVO */
+.noticias-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+}
+
+
+/* ============================
+   RESPONSIVE noticias
+============================ */
+
+/* Tablets */
+@media (max-width: 992px) {
+  .noticias-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .noticia-card img {
+    height: 180px;
+  }
+}
+
+/* Celulares */
+@media (max-width: 600px) {
+  .noticias-grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .noticias-section h2 {
+    text-align: center;
+    font-size: 28px;
+  }
+}
+
+/* ---------------------------------------------------- */
+/* 4. Sección de BLOG */
+/* ---------------------------------------------------- */
+
+
+.blog-section {
+  padding: 80px 0;
+  background: white; /* tono suave */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+}
+
+.blog-section h2 {
+  text-align: center;
+  font-size: 2.3rem;
+  color: var(--mathema-blue);
+  margin-bottom: 40px;
+}
+
+.blog-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  padding: 0 20px;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: stretch; 
+}
+
+
+
+/* ---------------------------------------------------- */
+/* MEDIA QUERIES (RESPONSIVE) */
+/* ---------------------------------------------------- */
+
+/* Tablets y Pantallas Medianas */
+@media (max-width: 992px) {
+  /* Sección 1: Hero */
+  .hero-text-box {
+    max-width: 350px;
+    padding: 20px;
+  }
+  .hero-title {
+    font-size: 2em;
+  }
+
+  /* Sección 2: Contenido Central */
+  .content-section-a {
+    flex-direction: column;
+    padding: 40px 20px;
+    padding-top: 80px;
+  }
+  .content-image-wrapper, .content-text-block {
+    min-width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  /* Sección 3: Proyectos */
+  .projects-section-b {
+    flex-wrap: wrap;
+  }
+  .project-text-block, .project-card {
+    max-width: 48%; /* Dos columnas */
+  }
+  .project-text-block {
+    order: 1;
+  }
+  .project-card:nth-child(2) { /* Primer proyecto azul */
+    order: 2;
+  }
+  .project-card:nth-child(3) { /* Segundo proyecto azul */
+    order: 3;
+  }
+
+  /* Sección 4: MVV */
+  .cards-container {
+    flex-wrap: wrap;
+    gap: 50px;
+  }
+  .mvv-card {
+    min-width: 45%;
+  }
+}
+
+/* Móviles */
+@media (max-width: 600px) {
+  /* Sección 1: Hero */
+  /* 1. SECCIÓN HERO: Posición y Altura */
+  .hero-section-home {
+    justify-content: center;
+    align-items: flex-end; 
+    min-height: 60vh;
+  }
+  
+  /* 2. DEGRADADO: Ajustado a Azul */
+  .hero-overlay {
+    background: linear-gradient(to top, 
+      #085A9E 0%,                /* color azul intenso en la parte inferior (donde está el texto) */
+      rgba(8, 90, 158, 0.2) 50%, /* Azul semitransparente en el medio */
+      rgba(8, 90, 158, 0.0) 100% /* Transparente en la parte superior */
+    );
+    display: flex;
+    justify-content: center; 
+    align-items: flex-end;
+   
+  }
+  
+  /* 3. CAJA DE TEXTO: Centrado y Ubicado Abajo */
+  .hero-text-box {
+    max-width: 90%;
+    text-align: center; /* Centra el texto dentro de la caja */
+    margin: 0 auto 20px auto; 
+    align-self: flex-end; 
+    background-color: transparent;
+    padding: 0; 
+  }
+  
+  .hero-title {
+    font-size: 1.8em;
+  }
+
+
+  /* Sección 2: Contenido Central */
+  .content-image-wrapper {
+    height: 250px;
+    border-left: 5px solid var(--mathema-pink); 
+    border-top: 5px solid var(--mathema-red); 
+  }
+  
+  /* Sección 3: Proyectos */
+  .projects-section-b {
+    padding: 20px;
+    flex-direction: column; 
+  }
+  .project-text-block, .project-card {
+    max-width: 100%;
+    order: unset !important;
+  }
+  
+  /* Sección 4: MVV */
+  .mission-vision-values-section {
+    padding: 80px 10px 40px;
+  }
+  .cards-container {
+    flex-direction: column;
+    gap: 60px;
+  }
+  .mvv-card {
+    min-width: 100%;
+  }
+}
