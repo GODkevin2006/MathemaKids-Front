@@ -49,14 +49,9 @@ export default function MyNavbar() {
             <Nav.Link href="/">Inicio</Nav.Link>
             <Nav.Link href="#">Proyectos</Nav.Link>
             
-
-          
-
-            
-
             <NavDropdown title="Conoce más" id="conoce-dropdown">
               <NavDropdown.Item href="#">Historia</NavDropdown.Item>
-              <NavDropdown.Item href="blogs">Blog</NavDropdown.Item>
+              <NavDropdown.Item href="/Blogs">Blog</NavDropdown.Item>
               <NavDropdown.Item href="#">Noticas</NavDropdown.Item>
             </NavDropdown>
 
@@ -65,7 +60,7 @@ export default function MyNavbar() {
               <NavDropdown.Item href="#">Documental</NavDropdown.Item>
             </NavDropdown>
 
-            <Nav.Link href="#">Contacto</Nav.Link>
+            <Nav.Link href="/contacto">Contacto</Nav.Link>
           </Nav>
 
           {/* Mostrar botones de login/register o perfil según autenticación */}

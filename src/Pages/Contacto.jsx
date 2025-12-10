@@ -1,6 +1,6 @@
 import "./contacto.css";
 
-export default function Contacto() {
+const Contacto = () => {
   return (
     <div className="contact-container">
 
@@ -34,3 +34,5 @@ export default function Contacto() {
     </div>
   );
 }
+
+export default Contacto;
