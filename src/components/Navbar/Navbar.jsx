@@ -130,7 +130,7 @@ export default function MyNavbar() {
                     navigate("/register");
                   }}
                 >
-                  Crear cuenta
+                  Crear Cuenta
                 </Button>
               </>
             )}

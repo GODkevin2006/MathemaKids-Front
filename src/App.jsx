@@ -1,11 +1,6 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { AuthProvider } from './context/AuthContext';
-<<<<<<< HEAD
 import CrearCuenta from './components/auth/CrearCuenta.jsx';
-=======
-
-
->>>>>>> 5375142f9fa9f09754600f70cef7383ed0746b61
 import Login from './components/auth/Login';
 import Footer from "./components/Footer/Footer.jsx";
 import Navbar from "./components/Navbar/Navbar.jsx";
@@ -29,28 +24,19 @@ function App() {
     <BrowserRouter>
       <AuthProvider>
 
-<<<<<<< HEAD
-        <Routes>
-          {/* Ruta del Login */}
-          <Route path="/login" element={<Login />} />
-
-          {/* Ruta de Crear Cuenta */}
-          <Route path="/crearcuenta" element={<CrearCuenta />} />
-        </Routes>
-=======
         <Navbar />
 
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/contacto" element={<Contacto />} />
+          <Route path="/crearcuenta" element={<CrearCuenta />} />
         
 
         </Routes>
         
 
         <Footer />
->>>>>>> 5375142f9fa9f09754600f70cef7383ed0746b61
 
       </AuthProvider>
     </BrowserRouter>
