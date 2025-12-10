@@ -1,68 +1,222 @@
+/*
+ * ESTILOS GLOBALES Y LAYOUT DE PANTALLA
+ * Usa display: flex para el layout de dos columnas
+*/
 .login-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  background: #f3f4f6;
-  padding: 1rem;
+    display: flex; /* Habilita el layout flexible */
+    min-height: 100vh; /* Ocupa toda la altura de la ventana */
+    width: 100vw; /* Ocupa todo el ancho de la ventana */
+    overflow: hidden; /* Oculta cualquier cosa que se desborde */
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; /* Fuente similar a la de la imagen */
+}
+
+/* * PANEL IZQUIERDO: Formulario (Fondo Blanco) 
+*/
+.login-left-panel {
+    flex: 0 0 500px; /* Ancho fijo para el formulario (ajusta si es necesario) */
+    background-color: rgb(255, 255, 255);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra horizontalmente el contenido */
+    justify-content: center; /* Centra verticalmente el contenido */    
+    box-shadow: 0 0 20px rgba(241, 233, 233, 0.056);
 }
 
 .login-card {
-  width: 100%;
-  max-width: 380px;
-  padding: 2rem;
-  background: #ffffff;
-  border-radius: 20px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    max-width: 390px; /* Ancho del formulario, similar al de la imagen */
+    width: 100%;
+    padding: 20px 0;
 }
 
-.login-title {
-  text-align: center;
-  font-size: 1.8rem;
-  font-weight: bold;
-  margin-bottom: 1.5rem;
+/* * PANEL DERECHO: Fondo Gráfico (Cohete) 
+*/
+.login-right-panel {
+    flex-grow: 1; /* Ocupa el espacio restante */
+    background: 
+        url('/src/assets/images//logo/imagen.png') center center / cover no-repeat, 
+        linear-gradient(to top, #0A0A2F, #1C0F4A); 
+    background-color: #1a0847;
 }
+
+/* * ESTILOS DE ELEMENTOS DEL FORMULARIO 
+*/
+
+/* Logo */
+.logo-section {
+    margin-bottom: 30px;
+    text-align: left;
+}
+.login-logo {
+    width: 200px;
+    height: auto;
+}
+
+.login-title1 {
+    font-size: 24px;
+    font-weight: 1000;
+    margin-bottom: 5px;
+    color: #B20FB2;
+    text-align: left;
+}
+
+.login-title2 {
+    font-size: 50px;
+    font-weight: 1000;
+    margin-bottom: 5px;
+    color: #085A9E;     
+    text-align: left;
+}
+
+/* Texto de "¿No tienes cuenta?" */
+.signup-link {
+    font-size: 14px;
+    margin-bottom: 30px;
+    color: #666;
+    text-align: left;
+}
+.signup-link a {
+    color: #085A9E;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.signup-link a:hover{
+    color: #B20FB2;
+}
+
+/* ✔ EFECTO DE SUBRAYADO ANIMADO */
+.hover-line {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit;
+}
+
+.hover-line::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 0%;
+    height: 2px;
+    background-color: currentColor;
+    transition: width 0.3s ease-in-out;
+}
+
+.hover-line:hover::after {
+    width: 100%;
+}
+
 
 .login-group {
-  margin-bottom: 1rem;
+    margin-bottom: 15px;
+    text-align: left;
 }
 
 .login-label {
-  font-weight: 600;
-  margin-bottom: 0.3rem;
-  display: block;
+    display: block;
+    font-size: 14px;
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 5px;
 }
 
 .login-input {
-  width: 100%;
-  padding: 0.7rem;
-  border: 1px solid #d1d5db;
-  border-radius: 10px;
-  font-size: 1rem;
-  outline: none;
-  transition: 0.2s;
+    width: 100%;
+    padding: 10px 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+    box-sizing: border-box;
+    transition: border-color 0.2s;
 }
 
 .login-input:focus {
-  border-color: #6366f1;
-  box-shadow: 0 0 4px rgba(99, 102, 241, 0.4);
+    border-color: #B20FB2;
+    outline: none;
 }
 
+/* Sección Olvidé Contraseña */
+.remember-forgot-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    font-size: 14px;
+}
+
+.remember-me {
+    display: flex;
+    align-items: center;
+}
+
+.checkbox-label {
+    color: #666;
+    margin-left: 5px;
+    cursor: pointer;
+}
+
+    .forgot-password {
+        color: #085A9E;
+        text-decoration: none;
+        font-weight: 500;
+        transition: color 0.2s ease;
+    }
+
+    .forgot-password a:hover {
+        color:#B20FB2;
+    }
+
+/* Botón */
 .login-button {
-  width: 100%;
-  padding: 0.8rem;
-  border: none;
-  border-radius: 12px;
-  background: #6366f1;
-  color: white;
-  font-size: 1.1rem;
-  font-weight: bold;
-  cursor: pointer;
-  transition: 0.2s;
+    width: 100%;
+    padding: 12px;
+    background-color: #085A9E;
+    color: white;
+    border: 1px solid #ffffff;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 1000;
+    cursor: pointer;
+    transition: background-color 0.2s;
 }
 
 .login-button:hover {
-  background: #4f46e5;
+    background-color: #ffffff;
+    color: #B20FB2;
+    border-color: #B20FB2;
 }
 
+/* Copyright */
+.copyright-text {
+    font-size: 12px;
+    color: #999;
+    margin-top: 30px;
+    text-align: center;
+    line-height: 1.5;
+}
+.copyright-text a {
+    color: #999;
+    text-decoration: none;
+    margin: 0 5px;
+    font-weight: 500;
+}
+.copyright-text a:hover {
+    text-decoration: underline;
+}
 
+/* Responsive */
+@media (max-width: 900px) {
+    .login-container {
+        flex-direction: column;
+    }
+    .login-left-panel {
+        flex: 1 1 auto;
+        padding: 40px 20px;
+    }
+    .login-right-panel {
+        display: none;
+    }
+}
