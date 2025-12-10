@@ -1,25 +1,26 @@
 import { useState } from "react";
 import { useAuth } from "../../context/AuthContext";
+import { useNavigate } from "react-router-dom";
 import "../../styles/loginStyle.css"; // Importa los estilos
 
 export default function Login() {
 
   const {login} = useAuth();
+  const navigate = useNavigate();
 
   const [correo, setCorreo] = useState("");
   const [contrasena, setContrasena] = useState("");
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
+    try{e.preventDefault();
     console.log({ correo, contrasena });
-    const respuesta = await login(correo, contrasena);
+    const respuesta = await login(correo, contrasena); 
 
-    if (!respuesta) {
-       return console.log("Error en el login");
-    }
+    console.log("Respuesta del login:", respuesta);
+    navigate("/");
 
-    return console.log("Login exitoso");
-
+    } catch (error) {console.error("Error en el login:", error);}
+    
   };
 
   return (
