@@ -2,6 +2,7 @@ import { Navbar, Nav, NavDropdown, Container, Button, Dropdown } from "react-boo
 import { useAuth } from "../../context/AuthContext"; // Ajusta la ruta según tu estructura
 import { useNavigate } from "react-router-dom";
 import logo from "../../assets/images/logo/MathemaKids-Logo-V1.png";
+import { Link } from "react-router-dom";
 import "./Navbar.css";
 
 export default function MyNavbar() {
@@ -47,6 +48,11 @@ export default function MyNavbar() {
           <Nav className="mx-auto nav-items">
             <Nav.Link href="/">Inicio</Nav.Link>
             <Nav.Link href="#">Proyectos</Nav.Link>
+            
+
+          
+
+            
 
             <NavDropdown title="Conoce más" id="conoce-dropdown">
               <NavDropdown.Item href="#">Historia</NavDropdown.Item>
