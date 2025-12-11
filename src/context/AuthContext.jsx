@@ -16,15 +16,17 @@ export const AuthProvider = ({ children }) => {
         try{
             console.log("Intentando iniciar sesión con:", correo, contraseña);
             const response = await api.post('/login', { correo, contraseña }, { withCredentials: true });
-       
-            if (response.user) {
-                setUser(response.user);
-                setRol(response.user.rol);
-                
-                return response.user.rol;
+            
+            
+            if (response.data.user) {
+                setUser(response.data.user);
+                setRol(response.data.user.id_rol);
+               
+                return response.data.user.id_rol;
+
             } else {
                 console.warn("Datos de usario o rol faltantes");
-                return false;
+                return false ;
             }
         } catch (error) {
             console.error(error);
@@ -32,39 +34,75 @@ export const AuthProvider = ({ children }) => {
         }
     };
 
-    // const logout = async () => {
-    //             await api.post('/logout',);
-    //             setUser(null);
-    //             setRol(null);
-    //         };
+    const logout = async () => {
+        try {
+            // endpoint para logout
+            await api.post('/logout', {}, { withCredentials: true });
+        } catch (error) {
+            console.error("Error al cerrar sesión:", error);
+        } finally {
+            // Limpiar el estado local sin importar la respuesta del backend
+            setUser(null);
+            setRol(null);
+        }
+    };
 
-
+    // Verificar usuario al cargar (si usas tokens persistentes)
     // const verifyToken = async () => {
-    //         try {
-    //             const response = await api.get('/user');
-    //             setUser(response.user);
-    //            setRol(response.user.rol);
-    //         } catch (error) {
-    //            console.error(error);
-    //             setUser(null);
-    //             setRol(null);
-    //        }
-            
-    //   };
+    //     try {
+    //         const response = await api.get('/me', { withCredentials: true });
+    //         const userData = response.data?.user || response.data;
+    //         if (userData) {
+    //             setUser(userData);
+    //             setRol(userData.id_rol || 'usuario');
+    //         }
+    //     } catch (error) {
+    //         console.error("Error verificando usuario:", error);
+    //         setUser(null);
+    //         setRol(null);
+    //     } finally {
+    //         setLoading(false);
+    //     }
+    // };
 
     // useEffect(() => {
-    // verifyToken();
+    //     verifyToken();
     // }, [location.pathname]);
 
+    useEffect(() => {
+        const verifyToken = async () => {
+        try {
+            const response = await api.get('/me', { withCredentials: true });
+            setUser(response.data.user);
+            setRol(response.data.user.id_rol);
+
+        } catch (error) {
+            console.error("Error verificando usuario:", error);
+            setUser(null);
+            setRol(null);
+        } finally {
+            setLoading(false);
+        }
+    };
+        verifyToken();
+
+    }, [location.pathname]);
+
     return (
-        <AuthContext.Provider value={{ user, login,  rol }}>
+        <AuthContext.Provider value={{ 
+            user, 
+            setUser, 
+            rol, 
+            login, 
+            logout,
+            loading 
+        }}>
             {children}
         </AuthContext.Provider>
     );
 
-//     AuthProvider.propTypes = {
-//        children: PropTypes.node.isRequired,
-//    };  
+
+   
 
 };
 

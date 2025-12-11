@@ -9,6 +9,9 @@ import BlogCard from "../components/Blog_card/Blog_card.jsx";
 import Img1 from '../assets/images/Mathemakids/imgEjemplo.png';
 
 
+
+
+
 const Home = () => {
   return (
     <main className="mathema-kids-home-content">
@@ -129,16 +132,12 @@ const Home = () => {
       
       {/* 5. SECCIÓN DE NOTICIAS */}
       <section className="noticias-section">
-        <h2 data-aos="fade-right">Noticias</h2>
+        <h2  data-aos="fade-right">Noticias</h2>
 
         <div className="noticias-grid">
           <Noticia imagen={Img1} titulo="Qué es el cambio climático subterráneo y cómo afecta" fecha="27 julio 2023" />
           <Noticia imagen={Img1} titulo="Adiós al pajarito: Elon Musk cambia el logotipo" fecha="24 julio 2023" />
           <Noticia imagen={Img1} titulo="4 rasgos exclusivos de los humanos que no puede imitar la IA 4 rasgos exclusivos de los humanos que no p 4 rasgos exclusivos de los humanos que no p 4 rasgos exclusivos de los humanos que no p 4 rasgos exclusivos de los humanos que no p" fecha="21 julio 2023" />
-          <Noticia imagen={Img1} titulo="El error que desvió correos militares de EE.UU." fecha="18 julio 2023" />
-          <Noticia imagen={Img1} titulo="Qué es el cambio climático subterráneo y cómo afecta" fecha="27 julio 2023" />
-          <Noticia imagen={Img1} titulo="Adiós al pajarito: Elon Musk cambia el logotipo" fecha="24 julio 2023" />
-          <Noticia imagen={Img1} titulo="4 rasgos exclusivos de los humanos que no puede imitar la IA" fecha="21 julio 2023" />
           <Noticia imagen={Img1} titulo="El error que desvió correos militares de EE.UU." fecha="18 julio 2023" />
         </div>
       </section>
@@ -165,6 +164,9 @@ const Home = () => {
       </div>
       
     </section>
+
+    {/* 5. SECCIÓN DE CONTACTO */}
+    
 
 
     </main>

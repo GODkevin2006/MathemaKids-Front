@@ -57,12 +57,25 @@
   border-radius: 12px;
   padding: 10px 20px;
   transition: all 0.3s ease;
+  white-space: nowrap;
 }
 
 .btn-register-custom:hover {
   background: #085A9E !important;
   color: white !important;
   transform: scale(1.05);
+}
+
+.navbar-collapse {
+  overflow: visible !important;
+}
+
+@media (max-width: 992px) {
+  #dropdown-user + .dropdown-menu {
+    position: static !important;
+    transform: none !important;
+    margin-top: 8px;
+  }
 }
 
 
