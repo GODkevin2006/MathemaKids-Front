@@ -11,26 +11,26 @@ export default function MyNavbar() {
   const navigate = useNavigate();
 
   const handleLogout = async () => {
-    
+
     if (logout) {
       await logout();
     }
     navigate("/");
   };
 
-//iniciales en el icono de usuario
+  //iniciales en el icono de usuario
 
   const getInitials = (user) => {
-  if (!user) return "";
+    if (!user) return "";
 
-  const nombres = user?.nombres?.trim().split(" ") || [];
-  const apellidos = user?.apellidos?.trim().split(" ") || [];
+    const nombres = user?.nombres?.trim().split(" ") || [];
+    const apellidos = user?.apellidos?.trim().split(" ") || [];
 
-  const inicialNombre = nombres[0]?.charAt(0).toUpperCase() || "";
-  const inicialApellido = apellidos[0]?.charAt(0).toUpperCase() || "";
+    const inicialNombre = nombres[0]?.charAt(0).toUpperCase() || "";
+    const inicialApellido = apellidos[0]?.charAt(0).toUpperCase() || "";
 
-  return inicialNombre + inicialApellido;
-};
+    return inicialNombre + inicialApellido;
+  };
 
   return (
     <Navbar bg="white" expand="lg" className="shadow-sm py-3">
@@ -48,7 +48,7 @@ export default function MyNavbar() {
           <Nav className="mx-auto nav-items">
             <Nav.Link href="/">Inicio</Nav.Link>
             <Nav.Link href="#">Proyectos</Nav.Link>
-            
+
             <NavDropdown title="Conoce más" id="conoce-dropdown">
               <NavDropdown.Item href="/historia">Historia</NavDropdown.Item>
               <NavDropdown.Item href="/Blogs">Blog</NavDropdown.Item>
@@ -57,7 +57,7 @@ export default function MyNavbar() {
 
             <NavDropdown title="Divulgación" id="divulga-dropdown">
               <NavDropdown.Item href="#">Podcast</NavDropdown.Item>
-              <NavDropdown.Item href="#">Documental</NavDropdown.Item>
+              <NavDropdown.Item href="/Documental">Documental</NavDropdown.Item>
             </NavDropdown>
 
             <Nav.Link href="/contacto">Contacto</Nav.Link>
@@ -66,13 +66,13 @@ export default function MyNavbar() {
           {/* Mostrar botones de login/register o perfil según autenticación */}
           <div className="d-flex align-items-center gap-3">
             <span className="vertical-line mx-3"></span>
-            
+
             {user ? (
               // Usuario autenticado - Mostrar dropdown de perfil
               <Dropdown align="end">
-                <Dropdown.Toggle 
-                  variant="link" 
-                  id="dropdown-user" 
+                <Dropdown.Toggle
+                  variant="link"
+                  id="dropdown-user"
                   className="d-flex align-items-center text-decoration-none p-0"
                 >
                   {/* Icono de persona */}
@@ -89,10 +89,10 @@ export default function MyNavbar() {
                 <Dropdown.Menu>
 
                   <div className="px-3 py-2">
-                     <strong>{user.nombres} {user.apellidos}</strong>
-                     <div className="text-muted" style={{ fontSize: "0.8rem" }}>
-                     {user.correo}
-                   </div>
+                    <strong>{user.nombres} {user.apellidos}</strong>
+                    <div className="text-muted" style={{ fontSize: "0.8rem" }}>
+                      {user.correo}
+                    </div>
                   </div>
 
                   <Dropdown.Divider />
@@ -101,14 +101,14 @@ export default function MyNavbar() {
                     <i className="bi bi-person me-2"></i>
                     Mi Perfil
                   </Dropdown.Item>
-                  
+
                   {rol === 'admin' && (
                     <Dropdown.Item href="/admin">
                       <i className="bi bi-speedometer2 me-2"></i>
                       Panel Admin
                     </Dropdown.Item>
                   )}
-                  
+
                   <Dropdown.Divider />
                   <Dropdown.Item onClick={handleLogout} className="text-danger">
                     <i className="bi bi-box-arrow-right me-2"></i>

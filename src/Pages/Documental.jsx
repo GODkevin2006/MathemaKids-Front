@@ -1,4 +1,5 @@
 import { useState } from "react";
+import heroImage from '../assets/images/Mathemakids/Hero-Mathemakids.jpg';
 import "./Documental.css";
 
 const Documental = () => {
@@ -28,22 +29,24 @@ const Documental = () => {
           title="Documental"
           allowFullScreen
         ></iframe>
-        <p className="subtitle">Explorando el cuerpo humano</p>
+        <p className="subtitle">Nuestra historia a continuación...</p>
       </div>
 
       {/* SINOPSIS + IMAGEN */}
       <div className="content-grid">
         <div>
-          <h3>Sinopsis</h3>
-          <textarea
-            placeholder="Aquí puedes escribir la sinopsis del documental..."
-          ></textarea>
+          <h3>Descripción </h3>
+          <p>"En los cerros orientales de Bogotá, Mathema Kids nació en 2015 como una respuesta a la falta de espacios de ciencia y tecnología en el barrio Los Laches.
+             Lo que comenzó como un pequeño semillero de investigación con 13 niños y niñas se convirtió en un lugar donde la curiosidad,
+             el trabajo en equipo y el enfoque STEM abren nuevas oportunidades. Este documental muestra cómo, a través del Aprendizaje Basado en Proyectos,
+             la comunidad transforma desafíos en conocimiento y esperanza."
+          </p>
         </div>
 
         <div>
           <h3>Imagen del documental</h3>
           <img
-            src="https://via.placeholder.com/400x250"
+            src={heroImage}
             alt="Imagen documental"
             style={{
               width: "100%",
@@ -83,11 +86,6 @@ const Documental = () => {
         </div>
       </div>
 
-      {/* RELATO + EXTRA */}
-      <div className="adicional">
-        <h3>Relato o experiencia</h3>
-        <textarea placeholder="Escribe aquí el relato del proceso..."></textarea>
-      </div>
 
       {/* MENSAJE FLOTANTE */}
       {showMessage && (
