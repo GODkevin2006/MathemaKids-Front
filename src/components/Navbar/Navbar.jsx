@@ -31,7 +31,6 @@ export default function MyNavbar() {
   return inicialNombre + inicialApellido;
 };
 
-  console.log("USER DESDE NAVBAR:", user);
   return (
     <Navbar bg="white" expand="lg" className="shadow-sm py-3">
       <Container>
@@ -50,7 +49,7 @@ export default function MyNavbar() {
             <Nav.Link href="#">Proyectos</Nav.Link>
             
             <NavDropdown title="Conoce más" id="conoce-dropdown">
-              <NavDropdown.Item href="#">Historia</NavDropdown.Item>
+              <NavDropdown.Item href="/historia">Historia</NavDropdown.Item>
               <NavDropdown.Item href="/Blogs">Blog</NavDropdown.Item>
               <NavDropdown.Item href="#">Noticas</NavDropdown.Item>
             </NavDropdown>
@@ -97,7 +96,7 @@ export default function MyNavbar() {
 
                   <Dropdown.Divider />
 
-                  <Dropdown.Item href="/perfil">
+                  <Dropdown.Item href="/perfilusuario">
                     <i className="bi bi-person me-2"></i>
                     Mi Perfil
                   </Dropdown.Item>
