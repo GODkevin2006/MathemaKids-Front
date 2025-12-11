@@ -5,11 +5,10 @@ import "../../styles/loginStyle.css"; // Importa los estilos
 import logo from "../../assets/images/logo/Mathemakids-logo-V1.png"; // la ruta depende de dónde tengas la imagen
 
 export default function Login() {
-  <div className="logo-section">
-    <img src={logo} alt="Logo" className="login-logo" />
-</div>
+ 
 
   const { login } = useAuth();
+  const navigate = useNavigate();
 
   const [correo, setCorreo] = useState("");
   const [contrasena, setContrasena] = useState("");
@@ -18,6 +17,8 @@ export default function Login() {
     e.preventDefault();
     console.log({ correo, contrasena });
     const respuesta = await login(correo, contrasena);
+
+    navigate("/");
 
     if (!respuesta) {
       return console.log("Error en el login");
@@ -35,7 +36,7 @@ export default function Login() {
           {/* CAMBIO 2: Incluir el logo de Matema Kids */}
           {/* Usamos el segundo logo que subiste para darle un toque personalizado */}
           <div className="logo-section">
-            <img src="/Mathemakids-logo-V1.png" alt="Mathema Kids Logo" className="login-logo" />
+            <img src={logo} alt="Mathema Kids Logo" className="login-logo" />
             {/* NOTA: Asegúrate de que esta imagen esté disponible en tu carpeta /public o ajusta la ruta */}
           </div>
 
@@ -103,3 +104,5 @@ export default function Login() {
     </div>
   );
 }
+
+

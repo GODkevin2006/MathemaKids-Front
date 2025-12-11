@@ -1,36 +1,37 @@
-import "./contacto.css";
+import { FaWhatsapp, FaEnvelope } from "react-icons/fa";
+import "./Contacto.css";
 
-export default function Contacto() {
+function Contacto() {
   return (
-    <div className="contact-container">
-
-      <h1>Contacto MathemaKids</h1>
-      <p className="descripcion">
-        ¡Estamos felices de saber de ti! Completa el formulario y cuéntanos cómo podemos ayudarte.
+    <section className="contacto-container">
+      <div className="contacto-container">
+      <h2>Contacto MathemaKids</h2>
+      <p>
+        Estamos felices de acompañarte en tu proceso. 
+        Si tienes dudas, sugerencias o necesitas más información 
+        sobre nuestros servicios, estaremos encantados de ayudarte.
+         Puedes comunicarte con nosotros a través de WhatsApp o correo electrónico, y responderemos lo más pronto posible.
       </p>
 
-      <form className="contact-form">
-        <div className="fila">
-          <input type="text" placeholder="Nombre" />
-          <input type="text" placeholder="Apellido" />
+      <div className="contacto-links">
+        <a
+          href="https://wa.me/573001112233"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="btn-whatsapp"
+        >
+          <FaWhatsapp className="icon" />
+          Contactar por WhatsApp
+        </a>
+
+        <a href="mailto:correo@mathemakids.com" className="btn-email">
+          <FaEnvelope className="icon" />
+          Enviar correo
+        </a>
         </div>
-
-        <div className="fila">
-          <input type="text" placeholder="Teléfono Celular" />
-          <input type="email" placeholder="Correo Electrónico" />
-        </div>
-
-        <input type="text" placeholder="Asunto" />
-        <textarea placeholder="Mensaje"></textarea>
-
-        <div className="checks">
-          <label><input type="checkbox" /> Acepto términos</label>
-          <label><input type="checkbox" /> Deseo recibir noticias</label>
-        </div>
-
-        <button type="submit" className="btn-enviar">Enviar mensaje</button>
-      </form>
-
-    </div>
+      </div>
+    </section>
   );
 }
+
+export default Contacto;
