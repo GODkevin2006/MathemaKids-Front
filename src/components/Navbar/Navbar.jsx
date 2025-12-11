@@ -121,13 +121,13 @@ export default function MyNavbar() {
                 <Button variant="primary" href="/login" className="btn-login-custom px-3">
                   Ingresar
                 </Button>
-                <Button
-                  href="/register"
-                  className="btn-register-custom px-3"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    navigate("/register");
-                  }}
+               <Button  
+               href="/crearcuenta" 
+               className="btn-register-custom px-3"
+               onClick={(e) => {
+                e.preventDefault();
+                navigate("/crearcuenta");
+                }}
                 >
                   Crear Cuenta
                 </Button>

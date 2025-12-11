@@ -31,12 +31,12 @@
 
 /* * PANEL DERECHO: Fondo Gráfico (Cohete) 
 */
-.login-right-panel {
-    flex-grow: 1; /* Ocupa el espacio restante */
+.login-right-panel { 
+    width: 10000px;/* Ocupa el espacio restante */
     background: 
-        url('/src/assets/images//logo/imagen.png') center center / cover no-repeat, 
-        linear-gradient(to top, #0A0A2F, #1C0F4A); 
-    background-color: #1a0847;
+        url('/src/assets/images/logo/Mathemakids-Logo-V3.png') center center / cover no-repeat, 
+        linear-gradient(to top, #ffffff, #ffffff); 
+    background-color: #ffffff;
 }
 
 /* * ESTILOS DE ELEMENTOS DEL FORMULARIO 
@@ -126,7 +126,7 @@
 .login-input {
     width: 100%;
     padding: 10px 15px;
-    border: 1px solid #ddd;
+    border: 1px solid #085A9E;
     border-radius: 4px;
     font-size: 16px;
     box-sizing: border-box;

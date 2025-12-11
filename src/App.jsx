@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { AuthProvider } from './context/AuthContext';
-import CrearCuenta from './components/auth/CrearCuenta.jsx';
+
+import CrearCuenta from "./Pages/CrearCuenta.jsx";
 import Login from './components/auth/Login';
 import Footer from "./components/Footer/Footer.jsx";
 import Navbar from "./components/Navbar/Navbar.jsx";
@@ -19,8 +20,8 @@ function App() {
 
   useEffect(() => {
     AOS.init({
-      duration: 900,   // duración de animaciones
-      once: false,      // sea anima cada que hace scroll
+      duration: 900, 
+      once: false,
     });
   }, []);
 
@@ -33,6 +34,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/crearcuenta" element={<CrearCuenta />} />
           <Route path="/contacto" element={<Contacto />} />
           <Route path="/crearcuenta" element={<CrearCuenta />} />
           <Route path="/perfilusuario" element={<PerfilUsuario />} />
@@ -42,7 +44,6 @@ function App() {
 
 
         </Routes>
-        
 
         <Footer />
 

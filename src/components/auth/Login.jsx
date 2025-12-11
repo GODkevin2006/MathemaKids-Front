@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { useAuth } from "../../context/AuthContext";
 import { useNavigate } from "react-router-dom";
-import "../../styles/loginStyle.css"; // Importa los estilosx|
-import logo from "../../assets/images/logo/MathemaKids-Logo-V1.png"; // la ruta depende de dónde tengas la imagen
+import "../../styles/loginStyle.css"; // Importa los estilos
+import logo from "../../assets/images/logo/Mathemakids-logo-V1.png"; // la ruta depende de dónde tengas la imagen
 
 export default function Login() {
  

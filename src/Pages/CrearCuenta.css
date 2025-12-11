@@ -1,0 +1,221 @@
+.register-container {
+  display: flex;
+  height: 100vh;
+  background: #ffffff;
+}
+
+/* Panel izquierdo */
+.register-left {
+  width: 40%;
+  padding: 40px 40px 40px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.register-logo {
+  width: 180px;
+  margin-bottom: 20px;
+}
+
+.register-title {
+  font-size: 50px;
+  font-weight: 1000;
+  color: #0054a6;
+  margin-bottom: 10px;
+}
+
+.register-subtitle {
+  font-size: 20px;
+  color: #B20FB2;
+  margin-bottom: 10px;
+}
+
+.register-form {
+  width: 100%;
+}
+
+.register-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.register-row {
+  display: flex;
+  gap: 20px;
+}
+
+.register-group label {
+  font-size: 14px;
+  margin-bottom: 5px;
+  color: #333;
+  font-weight: 600;
+}
+
+.register-group input {
+  padding: 17px;
+  border: 1px solid #085A9E;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.register-group input:focus {
+  border-color: #B20FB2;
+  outline: none;
+}
+
+.register-button {
+     width: 90%;
+    padding: 15px;
+    background-color: #085A9E;
+    color: white;
+    border: 1px solid #ffffff;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 1000;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.register-button:hover {
+  background: #ffffff;
+     color: #B20FB2;
+    border-color: #B20FB2;
+}
+
+.register-login-option {
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+.register-login-option a {
+  color: #085A9E;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.register-login-option a:hover{
+    color: #B20FB2;
+}
+
+.hover-line {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit;
+}
+
+.hover-line::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 0%;
+    height: 2px;
+    background-color: currentColor;
+    transition: width 0.3s ease-in-out;
+}
+
+.hover-line:hover::after {
+    width: 100%;
+}
+
+/* --- HACER TODO EL FORMULARIO MÁS ESTRECHO --- */
+.register-left {
+    max-width: 480px;     /* MÁS ESTRECHO */
+    margin: 0 auto;       /* CENTRA */
+}
+
+/* --- INPUTS ESTRECHOS Y ORDENADOS --- */
+.register-form input {
+    width: 90%;
+    padding: 12px;
+    font-size: 15px;
+    border: 2px solid #0a4a9a;
+    border-radius: 8px;
+    outline: none;
+    box-sizing: border-box;
+}
+
+/* --- CONTENEDOR DEL INPUT DE CONTRASEÑA --- */
+.password-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+/* --- INPUT DE CONTRASEÑA TENER ESPACIO PARA EL OJO --- */
+.password-wrapper input {
+    padding-right: 10px; /* espacio para el ícono */
+}
+
+/* --- OJO DENTRO DEL CUADRO --- */
+.toggle-password {
+    position: absolute;
+    right: 12px;        /* lo acerca al borde derecho */
+    top: 50%;           /* lo centra verticalmente */
+    transform: translateY(-50%);
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 18px;
+    color: #444;
+    padding: 0;
+}
+
+
+/* ----- REDUCE ESPACIOS ENTRE CAMPOS (VERTICALMENTE) ----- */
+.register-group {
+    margin-bottom: 8px;  /* antes seguro era 20px o más */
+}
+
+/* ----- REDUCE ALTURA DE LOS INPUTS ----- */
+.register-form input {
+    padding: 8px 10px; /* menos alto */
+    font-size: 14px;
+}
+
+/* FILA NOMBRE Y APELLIDO MÁS COMPACTA */
+.register-row {
+    gap: 10px;  /* reduce espacio horizontal entre los dos campos */
+    margin-bottom: 3px;
+}
+
+/* ----- CONTRASEÑAS: OJOS DENTRO Y MÁS COMPACTOS ----- */
+.password-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.password-wrapper input {
+    padding-right: 35px;   /* espacio para el ojo */
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+/* ICONO DENTRO DEL INPUT */
+.toggle-password {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 16px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+/* ----- BOTÓN MÁS BAJITO ----- */
+.register-button {
+    padding: 12px;
+    font-size: 15px;
+}
+
+
+/* Panel derecho con la imagen */
+.register-right {
+  width: 1000px;
+  background: url("../assets/images/logo/Mathemakids-logo-V3.png") center center/ cover no-repeat;
+}
